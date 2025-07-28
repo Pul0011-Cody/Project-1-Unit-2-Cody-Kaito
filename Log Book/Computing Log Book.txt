@@ -12,3 +12,5 @@ Tasks done:
 Cody: Present
 Kaito: Present
 Tasks done:
+-Finished the Proposal
+-Updated the GANTT Chart
