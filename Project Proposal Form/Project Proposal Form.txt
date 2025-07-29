@@ -1,0 +1,12 @@
+﻿Unit 2 Applied Computing Outcome 1 Innovative Solutions – Project Proposal Form
+Team Members
+● [Kaito]
+● [Cody]
+Project Title
+● [GoSpoil]
+Detailed Description
+● [It will be a movie website where when you search up a movie you want to watch it spoils it for you.]
+Target Audience
+● [People that want to watch movies but don’t have the time for it]
+Any Resources Required
+● [Laptop, Python (The code), Movie names, Movie plots]
