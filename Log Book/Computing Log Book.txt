@@ -19,3 +19,6 @@ Tasks done:
 Cody: Present
 Kaito: Present
 Tasks done:
+-Finished the survey
+-Started making the application for GoSpoil
+-Updated GANTT CHART
