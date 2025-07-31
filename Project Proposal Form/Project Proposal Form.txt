@@ -1,12 +1,17 @@
-﻿Unit 2 Applied Computing Outcome 1 Innovative Solutions – Project Proposal Form
+Unit 2 Applied Computing Outcome 1 Innovative Solutions – Project Proposal Form
 Team Members
-● [Kaito]
-● [Cody]
+● Kaito
+● Cody
+
 Project Title
-● [GoSpoil]
+● GoSpoil
+
 Detailed Description
-● [It will be a movie website where when you search up a movie you want to watch it spoils it for you.]
+● The app will be used to provide the user with a spoiled version of a series/movie/episode in which they can quickly learn the mainplot, the outcome, key characters, issues, resolutions.
+This would allow the user to quickly learn about a subject and keep themselves up to date without needing to watch the series
+
 Target Audience
-● [People that want to watch movies but don’t have the time for it]
+● The target audience would be people that want to watch movies but don’t have the time for it
+
 Any Resources Required
-● [Laptop, Python (The code), Movie names, Movie plots]
+● Laptop, Python (The code), Movie names, Movie plots
