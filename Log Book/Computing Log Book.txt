@@ -21,9 +21,12 @@ Kaito: Present
 Tasks done:
 -Finished the survey
 -Started making the application for GoSpoil
--Updated GANTT CHART
+-Updated GANTT Chart
 
 31/07/2025
 Cody: Present
 Kaito: Present
 Tasks done:
+-Edited Proposal
+-Edited application
+-Updated GANTT chart
