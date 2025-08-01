@@ -35,3 +35,5 @@ Tasks done:
 Cody: Present
 Kaito: Present
 Tasks done:
+-Edited application
+-Updated GANTT chart
