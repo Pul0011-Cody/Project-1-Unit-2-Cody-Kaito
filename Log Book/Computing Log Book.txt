@@ -28,12 +28,18 @@ Cody: Present
 Kaito: Present
 Tasks done:
 -Edited Proposal
--Edited application
+-Worked on application
 -Updated GANTT chart
 
 01/08/2025
 Cody: Present
 Kaito: Present
 Tasks done:
--Edited application
+-Worked on application
 -Updated GANTT chart
+
+07/08/2025
+Cody: Present
+Kaito: Present
+Tasks done:
+-Worked on application
