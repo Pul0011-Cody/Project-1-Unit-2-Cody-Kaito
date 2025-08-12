@@ -1,41 +1,78 @@
 import tkinter as tk
+import time
+
+# Track drag vs click
+drag_start_x = None
+dragging = False
 
 def create_scrollable_image_row(parent, image_paths, image_scale=2):
-    # --- Canvas ---
     canvas = tk.Canvas(parent, height=160)
     canvas.pack(fill="x", padx=10, pady=5)
 
-    # --- Scrollbar ---
-    scrollbar = tk.Scrollbar(parent, orient="horizontal", command=canvas.xview)
-    scrollbar.pack(fill="x")
-    canvas.configure(xscrollcommand=scrollbar.set)
-
-    # --- Inner Frame ---
     frame = tk.Frame(canvas)
     canvas.create_window((0, 0), window=frame, anchor="nw")
 
-    # --- Load Images ---
     images = []
-    for path in image_paths:
+    for i, path in enumerate(image_paths):
         img = tk.PhotoImage(file=path).subsample(image_scale, image_scale)
-        images.append(img)  # store reference
-        label = tk.Label(frame, image=img)
-        label.image = img  # prevent garbage collection
-        label.pack(side="left", padx=5)
+        images.append(img)
 
-    # --- Update Scrollregion ---
+        btn = tk.Label(frame, image=img, borderwidth=0)
+        btn.image = img
+        btn.pack(side="left", padx=5)
+
+        # Bind mouse events for drag + click
+        btn.bind("<Button-1>", lambda e, i=i, p=path: start_drag(e, canvas))
+        btn.bind("<B1-Motion>", lambda e, c=canvas: do_drag(e, c))
+        btn.bind("<ButtonRelease-1>", lambda e, i=i, p=path: end_drag(e, i, p))
+
     def on_configure(event):
         canvas.configure(scrollregion=canvas.bbox("all"))
 
     frame.bind("<Configure>", on_configure)
-    return frame
+    return frame, canvas
 
-# --- Main Window ---
+def start_drag(event, canvas):
+    global drag_start_x, dragging
+    drag_start_x = event.x_root
+    dragging = False
+    canvas.scan_mark(event.x, event.y)
+
+def do_drag(event, canvas):
+    global dragging
+    dragging = True
+    canvas.scan_dragto(event.x, event.y, gain=1)
+
+def end_drag(event, index, path):
+    global dragging
+    if not dragging:
+        on_image_click(index, path)
+
+def on_image_click(index, path):
+    for widget in root.winfo_children():
+        widget.pack_forget()
+
+    enlarged_img = tk.PhotoImage(file=path)
+    enlarged_label = tk.Label(root, image=enlarged_img)
+    enlarged_label.image = enlarged_img
+    enlarged_label.pack(pady=20)
+
+    back_btn = tk.Button(root, text="Back", command=restore_main_screen)
+    back_btn.pack(pady=10)
+
+def restore_main_screen():
+    for widget in root.winfo_children():
+        widget.pack_forget()
+    build_main_screen()
+
+def build_main_screen():
+    create_scrollable_image_row(root, image_paths)
+    create_scrollable_image_row(root, image_paths2)
+
 root = tk.Tk()
 root.title("GoSpoil")
-root.geometry("400x400")
+root.geometry("600x600")
 
-# --- image paths ---
 image_paths = [
     "Images/Shrek.gif",
     "Images/Shrek2.gif",
@@ -74,8 +111,5 @@ image_paths2 = [
     "Images/Starwarstros.gif"
 ]
 
-# --- Scrollable Rows ---
-create_scrollable_image_row(root, image_paths)
-create_scrollable_image_row(root, image_paths2)
-
+build_main_screen()
 root.mainloop()
