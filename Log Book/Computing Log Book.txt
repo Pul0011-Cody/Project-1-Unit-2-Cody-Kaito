@@ -54,3 +54,4 @@ Tasks done:
 Cody: Present
 Kaito: Present
 Tasks done:
+-Worked on application
