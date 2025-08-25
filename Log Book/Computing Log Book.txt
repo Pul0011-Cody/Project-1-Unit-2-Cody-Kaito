@@ -55,3 +55,13 @@ Cody: Present
 Kaito: Present
 Tasks done:
 -Worked on application
+
+14/08/2025
+Cody: Present
+Kaito: Present
+Tasks done:
+
+Useful Links:
+https://www.youtube.com/watch?v=WRsNZa45prE 
+https://www.imdb.com/ 
+https://ourcodeworld.com/articles/read/973/creating-your-own-shazam-identify-songs-with-python-through-audio-fingerprinting-in-ubuntu-18-04 
